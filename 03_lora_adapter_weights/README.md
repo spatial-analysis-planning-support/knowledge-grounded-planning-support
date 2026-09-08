@@ -2,7 +2,7 @@
 
 LoRA adapter weights trained for the spatial diagnosis stage (base model: Qwen3-VL-32B-Instruct, from the Hugging Face official repository).
 
-`adapter_model.safetensors` (256 MB) exceeds GitHub's per-file size limit and is distributed as an asset on the [Releases](../../releases) page. Download it and place it in this directory, keeping it together with the other three files.
+`adapter_model.safetensors` (256 MB) exceeds GitHub's per-file size limit and is distributed as an asset on the [Releases](../../releases) page.
 
 | File | Description |
 |:---|:---|

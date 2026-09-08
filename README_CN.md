@@ -30,7 +30,7 @@
 
 ## LoRA 适配器权重
 
-`adapter_model.safetensors`（256 MB）超出 GitHub 仓库单文件大小限制，通过 [Releases](../../releases) 页面附件发布，下载后置于 `03_lora_adapter_weights/` 目录下。
+`adapter_model.safetensors`（256 MB）超出 GitHub 仓库单文件大小限制，以 [Releases](../../releases) 页面附件形式发布。
 
 ## 复现入口
 
