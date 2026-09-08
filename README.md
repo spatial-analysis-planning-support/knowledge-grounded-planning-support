@@ -30,7 +30,7 @@ To support reproducibility of the prototype, this repository openly provides sel
 
 ## LoRA Adapter Weights
 
-`adapter_model.safetensors` (256 MB) exceeds GitHub's per-file size limit and is distributed as a release asset. Download it from the [Releases](../../releases) page and place it under `03_lora_adapter_weights/` together with the other files. md5: `94c469b3bd00f9747395676390334022`.
+`adapter_model.safetensors` (256 MB) exceeds GitHub's per-file size limit and is distributed as a release asset. Download it from the [Releases](../../releases) page and place it under `03_lora_adapter_weights/`.
 
 ## Reproduction
 
