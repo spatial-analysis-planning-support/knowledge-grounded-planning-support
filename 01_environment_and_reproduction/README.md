@@ -1,13 +1,12 @@
-# 01 Environment and Reproduction | 运行环境与复现脚本
+# 01 Environment and Reproduction
 
-## Runtime Environment | 运行环境
+## Runtime Environment
 
 - ms-swift 3.10.0.dev0 ｜ vLLM 0.11.0 ｜ PyTorch 2.8.0+cu128 ｜ CUDA 12.8
 - GPU: 2 × NVIDIA RTX PRO 6000
 - Base model: Qwen3-VL-32B-Instruct (from Hugging Face / ModelScope official repositories)
-- 基座模型：Qwen3-VL-32B-Instruct（Hugging Face / ModelScope 官方仓库获取）
 
-## Model Training | 模型训练
+## Model Training
 
 ```bash
 CUDA_VISIBLE_DEVICES=0,1 swift sft \
@@ -29,9 +28,7 @@ CUDA_VISIBLE_DEVICES=0,1 swift sft \
 
 LoRA is applied to all linear layers with rank=8, alpha=32, dropout=0.05. Full training arguments are recorded in `03_lora_adapter_weights/args.json`.
 
-LoRA 作用于全部线性层，rank=8、alpha=32、dropout=0.05。完整训练参数记录见 `03_lora_adapter_weights/args.json`。
-
-## Spatial Diagnosis Inference | 空间诊断推理
+## Spatial Diagnosis Inference
 
 ```bash
 CUDA_VISIBLE_DEVICES=0,1 \
@@ -48,9 +45,7 @@ swift infer \
 
 `--adapters` points to the trained LoRA weights directory, corresponding to `03_lora_adapter_weights/` in this repository; `--val_dataset` points to the inference dataset assembled in ms-swift message format.
 
-`--adapters` 指向训练所得 LoRA 权重目录，对应本仓库 `03_lora_adapter_weights/`；`--val_dataset` 指向待推理数据集，按 ms-swift 消息格式拼装。
-
-## Spatial Improvement Inference | 空间优化推理
+## Spatial Improvement Inference
 
 ```bash
 CUDA_VISIBLE_DEVICES=0,1 swift infer \
@@ -63,10 +58,8 @@ CUDA_VISIBLE_DEVICES=0,1 swift infer \
 --stream False
 ```
 
-## Key Inference Parameters | 主要推理参数
+## Key Inference Parameters
 
-temperature = 0.7，top_p = 0.8，top_k = 20，max_model_len = 4096，seed = 42
+temperature = 0.7, top_p = 0.8, top_k = 20, max_model_len = 4096, seed = 42
 
 Inputs are assembled in ms-swift message format: the system turn contains the full prompt text (see `04_prompt_templates/`), and the user-turn format is shown in the `messages` of each case under `05_representative_results/`.
-
-输入按 ms-swift 消息格式拼装：system 轮为提示词全文（见 `04_prompt_templates/`），user 轮格式见 `05_representative_results/` 各案例的 messages。
